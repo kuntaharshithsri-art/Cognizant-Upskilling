@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Event Portal</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#222;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+
+#welcomeBanner{
+background:#87ceeb;
+padding:25px;
+text-align:center;
+}
+
+.highlight{
+background:yellow;
+padding:5px;
+}
+
+section{
+padding:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td{
+padding:15px;
+text-align:center;
+}
+
+.gallery{
+width:300px;
+height:200px;
+border:3px solid #0d6efd;
+border-radius:10px;
+cursor:pointer;
+transition:0.4s;
+object-fit:cover;
+}
+
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+max-width:700px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#084298;
+}
+
+#location{
+margin-top:20px;
+font-weight:bold;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+video{
+width:100%;
+max-width:700px;
+display:block;
+margin:auto;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Local Community Event Portal</h1>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#events">Events</a>
+<a href="#register">Register</a>
+<a href="#contact">Contact</a>
+<a href="help.html" target="_blank">Help</a>
+</nav>
+
+<section id="home">
+
+<div id="welcomeBanner">
+<h2>Welcome Residents</h2>
+
+<p class="highlight">
+Explore community activities, cultural programs and public services.
+</p>
+
+<p>
+Register today and get
+<span style="color:red;font-weight:bold;">
+special event benefits
+</span>
+</p>
+
+</div>
+
+</section>
+
+<section id="events">
+
+<h2>Past Community Events</h2>
+
+<table>
+
+<tr>
+
+<td>
+<img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600"
+class="gallery"
+ondblclick="enlarge(this)"
+alt="Music Festival"
+title="Music Festival">
+<br><br>
+<strong>Music Festival</strong>
+</td>
+
+<td>
+<img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600"
+class="gallery"
+ondblclick="enlarge(this)"
+alt="Food Carnival"
+title="Food Carnival">
+<br><br>
+<strong>Food Carnival</strong>
+</td>
+
+<td>
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600"
+class="gallery"
+ondblclick="enlarge(this)"
+alt="Sports Meet"
+title="Sports Meet">
+<br><br>
+<strong>Sports Meet</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600"
+class="gallery"
+ondblclick="enlarge(this)"
+alt="Workshop"
+title="Workshop">
+<br><br>
+<strong>Community Workshop</strong>
+</td>
+
+<td>
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600"
+class="gallery"
+ondblclick="enlarge(this)"
+alt="Art Exhibition"
+title="Art Exhibition">
+<br><br>
+<strong>Art Exhibition</strong>
+</td>
+
+<td>
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600"
+class="gallery"
+ondblclick="enlarge(this)"
+alt="Community Meeting"
+title="Community Meeting">
+<br><br>
+<strong>Community Meeting</strong>
+</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section id="register">
+
+<h2>Event Registration</h2>
+
+<form id="eventForm">
+
+<input
+type="text"
+placeholder="Enter Full Name"
+required
+autofocus>
+
+<input
+type="email"
+placeholder="Enter Email Address"
+required>
+
+<input
+type="date"
+required>
+
+<input
+type="text"
+id="phone"
+placeholder="Enter Phone Number"
+onblur="validatePhone()">
+
+<select id="eventType" onchange="showFee()">
+
+<option value="">Select Event</option>
+<option value="Music Festival">Music Festival</option>
+<option value="Food Carnival">Food Carnival</option>
+<option value="Sports Meet">Sports Meet</option>
+
+</select>
+
+<p id="fee"></p>
+
+<textarea
+id="feedback"
+rows="5"
+placeholder="Enter Feedback"
+onkeyup="countCharacters()"></textarea>
+
+<p>Characters Typed: <span id="count">0</span></p>
+
+<button type="button" onclick="registerEvent()">
+Register Event
+</button>
+
+<br><br>
+
+<output id="result"></output>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>Community Event Promotional Video</h2>
+
+<video controls oncanplay="videoReady()">
+<source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+</video>
+
+<p id="videoStatus"></p>
+
+</section>
+
+<section>
+
+<h2>User Preferences</h2>
+
+<button onclick="savePreference()">
+Save Preferred Event
+</button>
+
+<button onclick="clearStorage()">
+Clear Preferences
+</button>
+
+</section>
+
+<section id="contact">
+
+<h2>Find Nearby Events</h2>
+
+<button onclick="findLocation()">
+Find Nearby Events
+</button>
+
+<p id="location"></p>
+
+</section>
+
+<footer>
+<p>© 2026 Local Community Event Portal | Developed by B.Tech Student</p>
+</footer>
+
+<script>
+
+window.onload=function(){
+
+let saved=localStorage.getItem("event");
+
+if(saved){
+document.getElementById("eventType").value=saved;
+showFee();
+}
+
+}
+
+function validatePhone(){
+
+let phone=document.getElementById("phone").value;
+
+if(phone.length<10){
+alert("Please enter a valid 10 digit phone number");
+}
+
+}
+
+function showFee(){
+
+let event=document.getElementById("eventType").value;
+
+let fee=document.getElementById("fee");
+
+if(event==="Music Festival"){
+fee.innerHTML="<strong>Registration Fee: ₹300</strong>";
+}
+else if(event==="Food Carnival"){
+fee.innerHTML="<strong>Registration Fee: ₹200</strong>";
+}
+else if(event==="Sports Meet"){
+fee.innerHTML="<strong>Registration Fee: ₹400</strong>";
+}
+else{
+fee.innerHTML="";
+}
+
+}
+
+function registerEvent(){
+
+document.getElementById("result").innerHTML=
+"<h3 style='color:green'>Registration Successful</h3>";
+
+sessionStorage.setItem("status","registered");
+
+}
+
+function countCharacters(){
+
+let text=document.getElementById("feedback").value;
+
+document.getElementById("count").innerHTML=text.length;
+
+}
+
+function enlarge(img){
+
+if(img.style.transform==="scale(1.4)"){
+img.style.transform="scale(1)";
+}
+else{
+img.style.transform="scale(1.4)";
+}
+
+}
+
+function videoReady(){
+
+document.getElementById("videoStatus").innerHTML=
+"Video Ready To Play";
+
+}
+
+function savePreference(){
+
+let event=document.getElementById("eventType").value;
+
+localStorage.setItem("event",event);
+
+alert("Preference Saved Successfully");
+
+}
+
+function clearStorage(){
+
+localStorage.clear();
+sessionStorage.clear();
+
+alert("Preferences Cleared Successfully");
+
+}
+
+function findLocation(){
+
+let options={
+enableHighAccuracy:true,
+timeout:5000
+};
+
+navigator.geolocation.getCurrentPosition(
+
+function(position){
+
+document.getElementById("location").innerHTML=
+"Latitude : " +
+position.coords.latitude +
+"<br><br>Longitude : " +
+position.coords.longitude;
+
+},
+
+function(error){
+
+document.getElementById("location").innerHTML=
+"Location access denied or unavailable.";
+
+},
+
+options
+
+);
+
+}
+
+window.onbeforeunload=function(){
+return "Your registration data may not be saved.";
+}
+
+console.log("Community Event Portal Loaded Successfully");
+
+</script>
+
+</body>
+</html>
