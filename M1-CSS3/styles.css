@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f4f4 url("https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200") no-repeat center center fixed;
+    background-size:cover;
+    color:#222;
+}
+
+#mainHeader{
+    background:linear-gradient(to right,#0077b6,#00b4d8);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+h2{
+    text-align:center;
+    margin:20px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+h3,p{
+    line-height:1.8;
+}
+
+.navMenu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    margin-top:15px;
+}
+
+.navMenu li{
+    margin:10px;
+    padding:5px;
+}
+
+a:link{
+    color:white;
+    text-decoration:none;
+}
+
+a:visited{
+    color:#d9f99d;
+}
+
+a:hover{
+    color:yellow;
+}
+
+a:active{
+    color:red;
+}
+
+.banner{
+    text-align:center;
+    padding:40px;
+    background:rgba(255,255,255,0.8);
+}
+
+.events{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.eventCard{
+    width:300px;
+    margin:20px;
+    padding:20px;
+    border:2px solid #0077b6;
+    background:rgba(255,255,255,0.9);
+    border-radius:10px;
+}
+
+.news{
+    column-count:2;
+    column-gap:30px;
+    column-rule:1px solid gray;
+    margin:20px;
+    padding:20px;
+    background:white;
+}
+
+table{
+    width:80%;
+    margin:20px auto;
+    border-collapse:collapse;
+    text-align:center;
+}
+
+th{
+    background:#0077b6;
+    color:white;
+}
+
+th,td{
+    border:1px solid black;
+    padding:12px;
+}
+
+tr:nth-child(even){
+    background:#e9ecef;
+}
+
+.activityList{
+    width:300px;
+    margin:20px auto;
+    list-style-type:square;
+    list-style-position:inside;
+}
+
+.activityList li{
+    padding:8px;
+}
+
+form{
+    width:50%;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+}
+
+.formInput{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid gray;
+}
+
+.formInput:focus{
+    outline:3px solid orange;
+}
+
+.btn{
+    background:#0077b6;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#023e8a;
+}
+
+footer{
+    text-align:center;
+    background:#222;
+    color:white;
+    padding:20px;
+    margin-top:20px;
+}
+
+@media screen and (max-width:768px){
+
+    .navMenu{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .events{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .eventCard{
+        width:90%;
+    }
+
+    .news{
+        column-count:1;
+    }
+
+    form{
+        width:90%;
+    }
+
+    h1{
+        font-size:6vw;
+    }
+
+    h2{
+        font-size:5vw;
+    }
+}
