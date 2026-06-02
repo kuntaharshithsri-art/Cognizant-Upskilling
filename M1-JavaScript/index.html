@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Event Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Community Event Portal</h1>
+</header>
+
+<section class="controls">
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search Events">
+
+<select id="categoryFilter">
+
+<option value="All">All Categories</option>
+<option value="Music">Music</option>
+<option value="Workshop">Workshop</option>
+<option value="Sports">Sports</option>
+
+</select>
+
+</section>
+
+<div id="loading">
+Loading Events...
+</div>
+
+<section id="eventsContainer">
+
+</section>
+
+<section class="form-section">
+
+<h2>Event Registration</h2>
+
+<form id="registrationForm">
+
+<input
+type="text"
+name="name"
+placeholder="Full Name">
+
+<span class="error" id="nameError"></span>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address">
+
+<span class="error" id="emailError"></span>
+
+<select name="event">
+
+<option value="">Select Event</option>
+
+</select>
+
+<span class="error" id="eventError"></span>
+
+<button type="submit" id="registerBtn">
+Register
+</button>
+
+</form>
+
+<div id="message"></div>
+
+</section>
+
+<script src="main.js"></script>
+
+</body>
+</html>
