@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>College Event Management Portal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#212529;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+
+.hero{
+background:linear-gradient(to right,#0d6efd,#00b4d8);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+margin-bottom:10px;
+}
+
+.container{
+width:95%;
+margin:auto;
+padding:20px;
+}
+
+.section-title{
+margin:30px 0 15px;
+padding-left:10px;
+border-left:5px solid #0d6efd;
+color:#0d6efd;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.card h3{
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+.search-box{
+text-align:center;
+margin-top:20px;
+}
+
+.search-box input{
+width:350px;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+margin-top:15px;
+}
+
+th{
+background:#0d6efd;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+tr:nth-child(even){
+background:#f2f2f2;
+}
+
+.status-upcoming{
+color:green;
+font-weight:bold;
+}
+
+.status-completed{
+color:blue;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.search-box input{
+width:100%;
+}
+
+table{
+font-size:12px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>College Event Management Portal</h1>
+
+<p>
+B.Tech Final Year Mini Project
+</p>
+
+</header>
+
+<nav>
+
+<a href="#dashboard">Dashboard</a>
+
+<a href="#users">Students</a>
+
+<a href="#events">Events</a>
+
+<a href="#sessions">Sessions</a>
+
+<a href="#registrations">Registrations</a>
+
+<a href="#feedback">Feedback</a>
+
+<a href="#resources">Resources</a>
+
+<a href="#reports">Reports</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>
+Department of Computer Science and Engineering
+</h1>
+
+<p>
+Technical Fest and Event Management System
+</p>
+
+</section>
+
+<div class="container">
+
+<section id="dashboard">
+
+<h2 class="section-title">
+Dashboard Overview
+</h2>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>Total Students</h3>
+<h1>5</h1>
+</div>
+
+<div class="card">
+<h3>Total Events</h3>
+<h1>4</h1>
+</div>
+
+<div class="card">
+<h3>Total Sessions</h3>
+<h1>4</h1>
+</div>
+
+<div class="card">
+<h3>Registrations</h3>
+<h1>5</h1>
+</div>
+
+<div class="card">
+<h3>Feedback Count</h3>
+<h1>3</h1>
+</div>
+
+<div class="card">
+<h3>Resources</h3>
+<h1>3</h1>
+</div>
+
+</div>
+
+</section>
+
+<section id="users">
+
+<h2 class="section-title">
+Student Details
+</h2>
+
+<div class="search-box">
+
+<input
+type="text"
+id="userSearch"
+placeholder="Search Student Name">
+
+</div>
+
+<table id="usersTable">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Student Name</th>
+<th>Email</th>
+<th>City</th>
+<th>Joined Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Harshith Kunta</td>
+<td>harshith@gmail.com</td>
+<td>Siddipet</td>
+<td>2025-01-10</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Rohith Kumar</td>
+<td>rohith@gmail.com</td>
+<td>Hyderabad</td>
+<td>2025-01-15</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Sai Teja</td>
+<td>saiteja@gmail.com</td>
+<td>Warangal</td>
+<td>2025-01-20</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Praneeth Reddy</td>
+<td>praneeth@gmail.com</td>
+<td>Karimnagar</td>
+<td>2025-02-05</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Nikhil Goud</td>
+<td>nikhil@gmail.com</td>
+<td>Nizamabad</td>
+<td>2025-02-15</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="events">
+
+<h2 class="section-title">
+College Events
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Event ID</th>
+<th>Event Name</th>
+<th>Location</th>
+<th>Start Date</th>
+<th>End Date</th>
+<th>Status</th>
+<th>Coordinator ID</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>1</td>
+<td>National Level Technical Fest</td>
+<td>Hyderabad</td>
+<td>2025-09-10</td>
+<td>2025-09-11</td>
+<td class="status-upcoming">
+Upcoming
+</td>
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+<td>Web Development Workshop</td>
+<td>Warangal</td>
+<td>2025-08-15</td>
+<td>2025-08-15</td>
+<td class="status-completed">
+Completed
+</td>
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+<td>Artificial Intelligence Seminar</td>
+<td>Karimnagar</td>
+<td>2025-10-05</td>
+<td>2025-10-05</td>
+<td class="status-upcoming">
+Upcoming
+</td>
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+<td>24 Hour Coding Hackathon</td>
+<td>Hyderabad</td>
+<td>2025-11-20</td>
+<td>2025-11-21</td>
+<td class="status-upcoming">
+Upcoming
+</td>
+<td>4</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+<section id="sessions">
+
+<h2 class="section-title">
+Event Sessions
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Session ID</th>
+<th>Event ID</th>
+<th>Session Title</th>
+<th>Speaker</th>
+<th>Start Time</th>
+<th>End Time</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Inauguration Program</td>
+<td>Dr. Srinivas Rao</td>
+<td>10:00 AM</td>
+<td>11:00 AM</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>1</td>
+<td>Latest Trends in Technology</td>
+<td>Prof. Anil Kumar</td>
+<td>11:15 AM</td>
+<td>12:30 PM</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Frontend Development Using HTML5</td>
+<td>Mr. Mahesh Kumar</td>
+<td>09:30 AM</td>
+<td>11:00 AM</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>3</td>
+<td>Introduction to Artificial Intelligence</td>
+<td>Dr. Rajesh Kumar</td>
+<td>10:00 AM</td>
+<td>12:00 PM</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="registrations">
+
+<h2 class="section-title">
+Event Registrations
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Registration ID</th>
+<th>Student ID</th>
+<th>Event ID</th>
+<th>Registration Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2025-08-01</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>2025-08-02</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2025-08-05</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>2025-09-01</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>2025-10-10</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="feedback">
+
+<h2 class="section-title">
+Student Feedback
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Feedback ID</th>
+<th>Student ID</th>
+<th>Event ID</th>
+<th>Rating</th>
+<th>Comments</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+<td>Excellent Workshop</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>Very Informative Session</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>Well Organized Event</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="resources">
+
+<h2 class="section-title">
+Event Resources
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Resource ID</th>
+<th>Event ID</th>
+<th>Resource Type</th>
+<th>File Name</th>
+<th>Uploaded Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>PDF</td>
+<td>TechnicalFestAgenda.pdf</td>
+<td>2025-08-25</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2</td>
+<td>Image</td>
+<td>WorkshopPoster.jpg</td>
+<td>2025-08-01</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>3</td>
+<td>Document</td>
+<td>AISeminarNotes.pdf</td>
+<td>2025-09-20</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="registrationForm">
+
+<h2 class="section-title">
+New Event Registration
+</h2>
+
+<div class="card">
+
+<form id="eventForm">
+
+<div style="margin:15px 0;">
+
+<label>
+Student Name
+</label>
+
+<br><br>
+
+<input
+type="text"
+id="fullName"
+placeholder="Enter Student Name"
+style="
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;">
+
+</div>
+
+<div style="margin:15px 0;">
+
+<label>
+Email Address
+</label>
+
+<br><br>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email Address"
+style="
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;">
+
+</div>
+
+<div style="margin:15px 0;">
+
+<label>
+Select Event
+</label>
+
+<br><br>
+
+<select
+id="eventSelect"
+style="
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;">
+
+<option value="">
+Choose Event
+</option>
+
+<option>
+National Level Technical Fest
+</option>
+
+<option>
+Web Development Workshop
+</option>
+
+<option>
+Artificial Intelligence Seminar
+</option>
+
+<option>
+24 Hour Coding Hackathon
+</option>
+
+</select>
+
+</div>
+
+<div style="margin:15px 0;">
+
+<label>
+Comments
+</label>
+
+<br><br>
+
+<textarea
+id="comments"
+rows="5"
+placeholder="Enter Comments"
+style="
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;">
+</textarea>
+
+</div>
+
+<button
+type="submit"
+style="
+background:#0d6efd;
+color:white;
+border:none;
+padding:12px 25px;
+cursor:pointer;
+border-radius:5px;">
+
+Register Event
+
+</button>
+
+</form>
+
+<div
+id="message"
+style="
+margin-top:20px;
+font-weight:bold;">
+</div>
+
+</div>
+
+</section>
+
+<section id="statistics">
+
+<h2 class="section-title">
+Event Statistics
+</h2>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>Upcoming Events</h3>
+<h1>3</h1>
+</div>
+
+<div class="card">
+<h3>Completed Events</h3>
+<h1>1</h1>
+</div>
+
+<div class="card">
+<h3>Total Speakers</h3>
+<h1>4</h1>
+</div>
+
+<div class="card">
+<h3>Average Rating</h3>
+<h1>4.7</h1>
+</div>
+
+<div class="card">
+<h3>Highest Registrations</h3>
+<h1>Technical Fest</h1>
+</div>
+
+<div class="card">
+<h3>Active Cities</h3>
+<h1>5</h1>
+</div>
+
+</div>
+
+</section>
+<section id="reports">
+
+<h2 class="section-title">
+SQL Reports Dashboard
+</h2>
+
+<div class="dashboard">
+
+<div class="card"><h3>Report 1</h3><p>Student Event Registrations</p></div>
+<div class="card"><h3>Report 2</h3><p>Upcoming Events</p></div>
+<div class="card"><h3>Report 3</h3><p>Completed Events</p></div>
+<div class="card"><h3>Report 4</h3><p>Top Rated Events</p></div>
+<div class="card"><h3>Report 5</h3><p>Students By City</p></div>
+<div class="card"><h3>Report 6</h3><p>Event Coordinators</p></div>
+<div class="card"><h3>Report 7</h3><p>Speaker Details</p></div>
+<div class="card"><h3>Report 8</h3><p>Session Information</p></div>
+<div class="card"><h3>Report 9</h3><p>Feedback Summary</p></div>
+<div class="card"><h3>Report 10</h3><p>Event Resources</p></div>
+<div class="card"><h3>Report 11</h3><p>Highest Rated Event</p></div>
+<div class="card"><h3>Report 12</h3><p>Average Ratings</p></div>
+<div class="card"><h3>Report 13</h3><p>Registrations Per Event</p></div>
+<div class="card"><h3>Report 14</h3><p>Most Active Students</p></div>
+<div class="card"><h3>Report 15</h3><p>Events By Location</p></div>
+<div class="card"><h3>Report 16</h3><p>Upcoming Sessions</p></div>
+<div class="card"><h3>Report 17</h3><p>Workshop Statistics</p></div>
+<div class="card"><h3>Report 18</h3><p>Seminar Statistics</p></div>
+<div class="card"><h3>Report 19</h3><p>Hackathon Statistics</p></div>
+<div class="card"><h3>Report 20</h3><p>Resource Usage</p></div>
+<div class="card"><h3>Report 21</h3><p>Monthly Registrations</p></div>
+<div class="card"><h3>Report 22</h3><p>Department Participation</p></div>
+<div class="card"><h3>Report 23</h3><p>Student Performance</p></div>
+<div class="card"><h3>Report 24</h3><p>Attendance Summary</p></div>
+<div class="card"><h3>Report 25</h3><p>Overall Event Analysis</p></div>
+
+</div>
+
+</section>
+
+<footer
+style="
+background:#212529;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;">
+
+<h2>
+College Event Management Portal
+</h2>
+
+<br>
+
+<p>
+B.Tech Final Year Mini Project
+</p>
+
+<p>
+Department of Computer Science and Engineering
+</p>
+
+<p>
+Academic Year 2025 - 2026
+</p>
+
+<p>
+Developed Using HTML5, CSS3, JavaScript and MySQL Concepts
+</p>
+
+<br>
+
+<p>
+© 2026 College Event Management Portal
+</p>
+
+</footer>
+
+</div>
+
+<script>
+
+const searchBox =
+document.getElementById("userSearch");
+
+searchBox.addEventListener(
+"keyup",
+function(){
+
+let filter =
+this.value.toUpperCase();
+
+let table =
+document.getElementById("usersTable");
+
+let rows =
+table.getElementsByTagName("tr");
+
+for(
+let i = 1;
+i < rows.length;
+i++
+){
+
+let nameCell =
+rows[i].getElementsByTagName("td")[1];
+
+if(nameCell){
+
+let value =
+nameCell.textContent ||
+nameCell.innerText;
+
+if(
+value.toUpperCase()
+.indexOf(filter) > -1
+){
+
+rows[i].style.display = "";
+
+}
+else{
+
+rows[i].style.display = "none";
+
+}
+
+}
+
+}
+
+}
+);
+
+const form =
+document.getElementById("eventForm");
+
+form.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+let studentName =
+document.getElementById("fullName").value;
+
+let email =
+document.getElementById("email").value;
+
+let eventName =
+document.getElementById("eventSelect").value;
+
+let message =
+document.getElementById("message");
+
+if(
+studentName === "" ||
+email === "" ||
+eventName === ""
+){
+
+message.style.color = "red";
+
+message.innerHTML =
+"Please fill all fields";
+
+return;
+
+}
+
+message.style.color = "green";
+
+message.innerHTML =
+"Registration Successful";
+
+updateRegistrations();
+
+form.reset();
+
+}
+);
+
+function updateRegistrations(){
+
+let dashboardValues =
+document.querySelectorAll(".card h1");
+
+let currentRegistrations =
+parseInt(
+dashboardValues[3].innerHTML
+);
+
+dashboardValues[3].innerHTML =
+currentRegistrations + 1;
+
+}
+
+function sortStudents(){
+
+let table =
+document.getElementById(
+"usersTable"
+);
+
+let switching = true;
+
+while(switching){
+
+switching = false;
+
+let rows =
+table.rows;
+
+for(
+let i = 1;
+i < rows.length - 1;
+i++
+){
+
+let shouldSwitch =
+false;
+
+let first =
+rows[i]
+.getElementsByTagName("td")[1];
+
+let second =
+rows[i+1]
+.getElementsByTagName("td")[1];
+
+if(
+first.innerHTML
+.toLowerCase() >
+second.innerHTML
+.toLowerCase()
+){
+
+shouldSwitch = true;
+
+break;
+
+}
+
+}
+
+if(shouldSwitch){
+
+rows[i]
+.parentNode
+.insertBefore(
+rows[i+1],
+rows[i]
+);
+
+switching = true;
+
+}
+
+}
+
+}
+
+window.onload =
+function(){
+
+sortStudents();
+
+console.log(
+"College Event Management Portal Loaded"
+);
+
+};
+
+const events = [
+
+"National Level Technical Fest",
+"Web Development Workshop",
+"Artificial Intelligence Seminar",
+"24 Hour Coding Hackathon"
+
+];
+
+events.forEach(
+event =>
+console.log(event)
+);
+
+const projectStatistics = {
+
+students:5,
+events:4,
+sessions:4,
+registrations:5,
+feedback:3,
+resources:3
+
+};
+
+console.log(
+projectStatistics
+);
+
+</script>
+
+</body>
+</html>
